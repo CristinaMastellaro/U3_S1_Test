@@ -1,0 +1,35 @@
+
+/* img {
+  height: 200px;
+} */
+
+.card {
+    width: 200px;
+    background-color: black;
+    color: white;
+}
+
+.card img {
+    height: 300px;
+}
+
+.card-body {
+    display: none;
+}
+
+/* .card:hover {
+
+}
+
+.card-body:hover {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 180px;
+} */
+
+@media screen and (min-width: 1200px) {
+  img {
+    height: 400px;
+  }
+}
