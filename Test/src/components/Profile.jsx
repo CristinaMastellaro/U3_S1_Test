@@ -7,7 +7,7 @@ const Profile = () => {
 
   const createButton = (label, color = "outline-secondary") => {
     return (
-      <button class={"btn btn-" + color + " rounded-0 px-4 mb-2"}>
+      <button className={"btn btn-" + color + " rounded-0 px-4 mb-2"}>
         {label}
       </button>
     );
@@ -43,11 +43,8 @@ const Profile = () => {
                 className="bg-dark-subtle w-100 mb-3 px-2"
               />
               <div className="border-bottom border-dark-subtle pb-4">
-                <label for="language" className="text-white-50 mb-1">
-                  Language:
-                </label>
                 <NavDropdown
-                  title="English"
+                  title="Language"
                   id="language"
                   className="text-white my-2"
                 >

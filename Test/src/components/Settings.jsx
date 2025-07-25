@@ -7,7 +7,7 @@ const Settings = () => {
   const returnAnchor = (text, margin = "") => {
     return (
       <p className={margin}>
-        <a href="#" class="text-primary text-decoration-none">
+        <a href="#" className="text-primary text-decoration-none">
           {text}
         </a>
       </p>
@@ -64,7 +64,7 @@ const Settings = () => {
           </div>
         </div>
       </section>
-      <section className="border-top border-dark-subtle py-4 container m-0">
+      <section className="border-top border-dark-subtle py-4 container m-0 mx-auto">
         <div className="row row-cols-1 row-cols-md-2">
           <div className="col col-md-4">
             <h4 className="text-body-tertiary">PLAN DETAILS</h4>
@@ -82,7 +82,7 @@ const Settings = () => {
           </div>
         </div>
       </section>
-      <section className="border-top border-dark-subtle py-4 container m-0">
+      <section className="border-top border-dark-subtle py-4 container m-0 mx-auto">
         <div className="row row-cols-1 row-cols-md-2">
           <div className="col col-md-4">
             <h4 className="text-body-tertiary">SETTINGS</h4>
@@ -97,7 +97,7 @@ const Settings = () => {
           </div>
         </div>
       </section>
-      <section className="border-top border-dark-subtle py-4 container m-0">
+      <section className="border-top border-dark-subtle py-4 container m-0 mx-auto">
         <div className="row row-cols-1 row-cols-md-2">
           <div className="col col-md-4">
             <h4 className="text-body-tertiary">MY PROFILE</h4>

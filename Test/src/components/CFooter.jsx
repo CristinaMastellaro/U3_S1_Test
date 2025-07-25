@@ -84,7 +84,7 @@ const CFooter = () => {
           </svg>
         </a>
       </div>
-      <div className="container m-0 mb-3 p-0">
+      <div className="container m-0 mb-3 p-0 mx-auto">
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4">
           {fillCol(firstCol)}
           {fillCol(secondCol)}

@@ -8,7 +8,18 @@ class Gallery extends Component {
     isLoading: true,
     isError: false,
     error: "",
-    show: false
+    show: false,
+    src: "",
+    alt: "",
+    year: ""
+  };
+
+  handleClose = () => {
+    this.setState({ show: false });
+  };
+
+  handleShow = () => {
+    this.setState({ show: true });
   };
 
   getPictures = () => {
@@ -23,7 +34,11 @@ class Gallery extends Component {
       .then((data) => {
         // console.log("data", data)
         // console.log("data.Search", data.Search)
-        this.setState({ movies: data.Search, isLoading: false });
+        this.setState({
+          movies: data.Search,
+          isLoading: false
+        });
+
         // console.log("this.state.movies", this.state.movies);
       })
       .catch((err) => {
@@ -56,42 +71,43 @@ class Gallery extends Component {
                 <div className="p-2" key={movie.imdbID}>
                   <img
                     src={movie.Poster}
-                    alt={"Poster of" + movie.Title}
+                    alt={movie.Title + " - " + movie.Year}
+                    className="text-light immIngrandire"
                     onClick={() => {
-                      this.setState({show: !this.state.show})
-                    }}
+                        this.setState({src: movie.Poster, alt: movie.Title, year: movie.Year})
+                        this.handleShow()}}
                   />
-                  {/* <Card onClick={() => {}}>
-                    <Card.Img variant="top" src={movie.Poster} />
-                    <Card.Body>
-                      <Card.Title>{movie.Title}</Card.Title>
-                      <Card.Text>{movie.Year}</Card.Text>
-                      <Button variant="danger">Watch</Button>
-                    </Card.Body>
-                  </Card> */}
-                  {/* <div
-                    className="modal show"
-                    style={{ display: "block", position: "initial" }}
-                  >
-                    {this.state.show && (<Modal.Dialog>
-                      <Modal.Header closeButton>
-                        <Modal.Title>{movie.Title}</Modal.Title>
-                      </Modal.Header>
-
-                      <Modal.Body>
-                        <p>{movie.Year}</p>
-                      </Modal.Body>
-
-                      <Modal.Footer>
-                        <Button variant="secondary">Close</Button>
-                        <Button variant="danger">Watch</Button>
-                      </Modal.Footer>
-                    </Modal.Dialog>)}
-                  </div> */}
                 </div>
               );
             }
           })}
+        </div>
+        <div
+          className="modal show"
+          style={{ display: "block", position: "initial" }}
+        >
+          <Modal show={this.state.show} onHide={this.handleClose}>
+            <Modal.Header className="justify-content-center bg-black">
+              <img
+                src={this.state.src}
+                alt={this.state.alt}
+                className="text-light"
+              />
+            </Modal.Header>
+            <Modal.Body className="d-flex flex-column align-items-center">
+              <p className="fw-bold">{this.state.alt}</p>
+              <p>{this.state.year}</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ipsa accusamus dolores possimus dolorem. Delectus, ullam, soluta laboriosam hic aliquid nulla quasi dicta, autem ex sapiente consectetur vel asperiores incidunt?</p>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={this.handleClose}>
+                Close
+              </Button>
+              <Button variant="danger" onClick={this.handleClose}>
+                Watch
+              </Button>
+            </Modal.Footer>
+          </Modal>
         </div>
       </article>
     );
