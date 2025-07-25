@@ -8,14 +8,14 @@ class HomepageBody extends Component {
     "http://www.omdbapi.com/?apikey=c4b8b6a5&s=Winx",
   ];
 
-  titles = ["Harry Potter", "Indiana Jones", "Winx"];
+  titles = ["Harry Potter", "My Little Ponies", "Winx"];
 
   render() {
     return (
       <section>
-        <Gallery title={this.titles[2]} endpoint={this.endpoints[2]} />
-        <Gallery title={this.titles[0]} endpoint={this.endpoints[0]} />
         <Gallery title={this.titles[1]} endpoint={this.endpoints[1]} />
+        <Gallery title={this.titles[0]} endpoint={this.endpoints[0]} />
+        <Gallery title={this.titles[2]} endpoint={this.endpoints[2]} />
       </section>
     );
   }
