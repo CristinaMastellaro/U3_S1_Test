@@ -1,6 +1,30 @@
 const CFooter = () => {
+  const firstCol = [
+    "Audio and Subtitles",
+    "Media Center",
+    "Privacy",
+    "Contact us",
+  ];
 
-//  const firstCol = 
+  const secondCol = [
+    "Audio Description",
+    "Investor Relations",
+    "Legal Notices",
+  ];
+
+  const thirdCol = ["Help Center", "Jobs", "Cookie Preferences"];
+
+  const forthCol = ["Gift Cards", "Terms of Use", "Corporate Information"];
+
+  const fillCol = (el) => {
+    return (
+      <p key={el}>
+        <a href="#" className="text-secondary text-decoration-none text">
+          {el}
+        </a>
+      </p>
+    );
+  };
 
   return (
     <footer className="w-100 mx-auto p-lg-5 p-3">
@@ -57,77 +81,24 @@ const CFooter = () => {
       <div className="container m-0 mb-3 p-0">
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4">
           <div className="col mb-3">
-            <p>
-              <a href="#" className="text-secondary text-decoration-none text">
-                Audio and Subtitles
-              </a>
-            </p>
-            <p>
-              <a href="#" className="text-secondary text-decoration-none">
-                Media Center
-              </a>
-            </p>
-            <p>
-              <a href="#" className="text-secondary text-decoration-none">
-                Privacy
-              </a>
-            </p>
-            <p>
-              <a href="#" className="text-secondary text-decoration-none">
-                Contact us
-              </a>
-            </p>
+            {firstCol.map((el) => {
+              return fillCol(el);
+            })}
           </div>
           <div className="col mb-3">
-            <p>
-              <a href="#" className="text-secondary text-decoration-none">
-                Audio Description
-              </a>
-            </p>
-            <p>
-              <a href="#" className="text-secondary text-decoration-none">
-                Investor Relations
-              </a>
-            </p>
-            <p>
-              <a href="#" className="text-secondary text-decoration-none">
-                Legal Notices
-              </a>
-            </p>
+            {secondCol.map((el) => {
+              return fillCol(el);
+            })}
           </div>
           <div className="col mb-3">
-            <p>
-              <a href="#" className="text-secondary text-decoration-none">
-                Help Center
-              </a>
-            </p>
-            <p>
-              <a href="#" className="text-secondary text-decoration-none">
-                Jobs
-              </a>
-            </p>
-            <p>
-              <a href="#" className="text-secondary text-decoration-none">
-                Cookie Preferences
-              </a>
-            </p>
+            {thirdCol.map((el) => {
+              return fillCol(el);
+            })}
           </div>
           <div className="col mb-3">
-            <p>
-              <a href="#" className="text-secondary text-decoration-none">
-                Gift Cards
-              </a>
-            </p>
-            <p>
-              <a href="#" className="text-secondary text-decoration-none">
-                Terms of Use
-              </a>
-            </p>
-            <p>
-              <a href="#" className="text-secondary text-decoration-none">
-                Corporate Information
-              </a>
-            </p>
+            {forthCol.map((el) => {
+              return fillCol(el);
+            })}
           </div>
         </div>
       </div>

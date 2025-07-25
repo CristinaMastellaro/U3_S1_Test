@@ -1,10 +1,13 @@
 import "../css/Gallery.css";
 import { Component } from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Spinner, Alert } from "react-bootstrap";
 
 class Gallery extends Component {
   state = {
     movies: [],
+    isLoading: true,
+    isError: false,
+    error: ""
   };
 
   getPictures = () => {
@@ -19,10 +22,13 @@ class Gallery extends Component {
       .then((data) => {
         // console.log("data", data)
         // console.log("data.Search", data.Search)
-        this.setState({ movies: data.Search });
+        this.setState({ movies: data.Search, isLoading: false });
         // console.log("this.state.movies", this.state.movies);
       })
-      .catch((err) => console.log("Errore!", err));
+      .catch((err) => {
+        this.setState({isLoading: false, isError: true, error: err})
+        console.log("Errore!", err)
+    });
   };
 
   componentDidMount() {
@@ -35,6 +41,10 @@ class Gallery extends Component {
       <article className="m-4">
         <h2 className="text-light mb-3">{this.props.title}</h2>
         <div className="d-flex overflow-auto pb-3">
+          {this.state.isLoading && !this.state.isError && (<Spinner animation="border" variant="danger" className="m-5"/>)}
+          {this.state.isError && (<Alert variant="danger" className="text-center my-2">
+          {"We couldn't load the movies: " + this.state.error}
+        </Alert>)}
           {this.state.movies.map((movie) => {
             if (movie.Type !== "game") {
               return (
