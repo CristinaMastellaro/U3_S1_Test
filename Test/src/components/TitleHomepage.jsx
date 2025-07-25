@@ -1,23 +1,19 @@
+import { NavDropdown } from "react-bootstrap"
+
 const TitleHomepage = () => {
     return (
        <div className="d-flex justify-content-between my-3 align-items-center p-3">
         <div className="d-flex align-items-center">
           <h1 className="text-light me-4">TV Shows</h1>
-          <div className="dropdown">
-            <button
-              className="btn btn-outline-light dropdown-toggle"
-              type="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
+          <NavDropdown
+              title="Genres"
+              id="basic-nav-dropdown"
+              className="text-white me-3 border rounded-2 px-3 py-2"
             >
-              Genres
-            </button>
-            <ul className="dropdown-menu">
-              <li><a className="dropdown-item" href="#">Action</a></li>
-              <li><a className="dropdown-item" href="#">Comedy</a></li>
-              <li><a className="dropdown-item" href="#">Musical</a></li>
-            </ul>
-          </div>
+              <NavDropdown.Item href="#">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#">Comedy</NavDropdown.Item>
+              <NavDropdown.Item href="#">Musical</NavDropdown.Item>
+            </NavDropdown>
         </div>
 
         <div className="me-4">

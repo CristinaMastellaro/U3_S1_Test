@@ -4,6 +4,8 @@ import CNavbar from './components/CNavbar'
 import CFooter from './components/CFooter';
 import TitleHomepage from './components/TitleHomepage';
 import HomepageBody from './components/HomepageBody';
+import Settings from './components/Settings';
+import Profile from './components/Profile';
 
 function App() {
 
@@ -13,6 +15,8 @@ function App() {
       <TitleHomepage />
       <HomepageBody />
       <CFooter />
+      <Settings />
+      <Profile />
     </>
   )
 }

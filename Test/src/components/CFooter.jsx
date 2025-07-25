@@ -16,19 +16,25 @@ const CFooter = () => {
 
   const forthCol = ["Gift Cards", "Terms of Use", "Corporate Information"];
 
-  const fillCol = (el) => {
+  const fillCol = (col) => {
     return (
-      <p key={el}>
-        <a href="#" className="text-secondary text-decoration-none text">
-          {el}
-        </a>
-      </p>
+      <div className="col mb-3">
+        {col.map((el) => {
+          return (
+            <p key={el}>
+              <a href="#" className="text-secondary text-decoration-none text">
+                {el}
+              </a>
+            </p>
+          );
+        })}
+      </div>
     );
   };
 
   return (
     <footer className="w-100 mx-auto p-lg-5 p-3">
-      <div className="mb-4">
+      <div className="mb-4 d-flex justify-content-center">
         <a href="#" className="text-decoration-none">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -80,32 +86,18 @@ const CFooter = () => {
       </div>
       <div className="container m-0 mb-3 p-0">
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4">
-          <div className="col mb-3">
-            {firstCol.map((el) => {
-              return fillCol(el);
-            })}
-          </div>
-          <div className="col mb-3">
-            {secondCol.map((el) => {
-              return fillCol(el);
-            })}
-          </div>
-          <div className="col mb-3">
-            {thirdCol.map((el) => {
-              return fillCol(el);
-            })}
-          </div>
-          <div className="col mb-3">
-            {forthCol.map((el) => {
-              return fillCol(el);
-            })}
-          </div>
+          {fillCol(firstCol)}
+          {fillCol(secondCol)}
+          {fillCol(thirdCol)}
+          {fillCol(forthCol)}
         </div>
       </div>
-      <button className="btn btn-outline-secondary mb-4">Service Code</button>
-      <p className="text-secondary">
-        © 1997-2019 Netflix, inc. i-0dD0Ofcda2fdf9c0de
-      </p>
+      <div className="d-flex flex-column align-items-center">
+        <button className="btn btn-outline-secondary mb-4">Service Code</button>
+        <p className="text-secondary">
+          © 1997-2019 Netflix, inc. i-0dD0Ofcda2fdf9c0de
+        </p>
+      </div>
     </footer>
   );
 };

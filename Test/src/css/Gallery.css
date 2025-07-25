@@ -3,13 +3,8 @@
   height: 200px;
 } */
 
-.card {
-    width: 200px;
-    background-color: black;
-    color: white;
-}
 
-.card img {
+article img {
     height: 300px;
 }
 
@@ -17,19 +12,12 @@
     display: none;
 }
 
-/* .card:hover {
-
+article img:hover {
+    transform: scale(1.2),
 }
 
-.card-body:hover {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 180px;
-} */
-
 @media screen and (min-width: 1200px) {
-  img {
+  article img {
     height: 400px;
   }
 }

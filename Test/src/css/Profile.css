@@ -1,0 +1,21 @@
+#avatarContainer {
+    position: relative;
+    max-height: 200px;
+}
+
+#avatarContainer img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    /* max-height: 100px; */
+}
+
+#avatarContainer svg {
+    position: absolute;
+    left: 5%;
+    bottom: 8%;
+    background-color: black;
+    border-radius: 100px;
+    padding: 0.2em;
+    border: 1px solid white;
+}
