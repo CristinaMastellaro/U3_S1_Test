@@ -2,7 +2,8 @@ import { NavDropdown } from "react-bootstrap"
 
 const TitleHomepage = () => {
     return (
-       <div className="d-flex justify-content-between my-3 align-items-center p-3">
+       <div className="my-3 p-3">
+        <div className="d-flex justify-content-between align-items-center">
         <div className="d-flex align-items-center">
           <h1 className="text-light me-4">TV Shows</h1>
           <NavDropdown
@@ -43,6 +44,8 @@ const TitleHomepage = () => {
             />
           </svg>
         </div>
+      </div>
+      <p className="text-light mt-4">Guarda i tuoi film dove vuoi! Clicca sui poster per vedere il titolo e le informazioni sulle tue serie preferite!</p>
       </div>
     )
 }
