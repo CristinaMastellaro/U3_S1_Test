@@ -45,7 +45,7 @@ const TitleHomepage = () => {
           </svg>
         </div>
       </div>
-      <p className="text-light mt-4">Guarda i tuoi film dove vuoi! Clicca sui poster per vedere il titolo e le informazioni sulle tue serie preferite!</p>
+      <p className="text-light mt-4">Watch your favorite movies everywhere you want! Click on the posters to see the title and info on your favorite TV Shows!</p>
       </div>
     )
 }
