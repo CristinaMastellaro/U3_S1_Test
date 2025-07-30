@@ -1,18 +1,11 @@
 import { Form } from "react-bootstrap";
 import HomepageBody from "./HomepageBody";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Search = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [title, setTitle] = useState("");
   const [doSearch, setdoSearch] = useState(false);
-
-  //   const navigate = useNavigate()
-
-  //   useEffect(() => {
-  //     navigate("/")
-  //   })
 
   return (
     <>
@@ -25,6 +18,7 @@ const Search = () => {
           console.log("searchQuery", searchQuery);
           setdoSearch(true);
         }}
+        className="mt-5"
       >
         <Form.Group
           className="mb-3 d-flex flex-column justify-content-center align-items-center"
