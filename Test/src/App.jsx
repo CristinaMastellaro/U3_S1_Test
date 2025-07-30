@@ -14,32 +14,36 @@ import Search from "./components/Search";
 function App() {
   return (
     <BrowserRouter>
-      <CNavbar />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <HomepageBody />
-            </>
-          }
-        />
-        <Route path="/search" element={<Search />} />
-        <Route path="/tv-shows" element={<TvShows />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/settings" element={<Settings />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/movie-details/:movieId" element={<MovieDetails />} />
-        <Route
-          path="*"
-          element={
-            <>
-              <HomepageBody />
-            </>
-          }
-        />
-      </Routes>
-      <CFooter />
+      <div className="d-flex flex-column" style={{ minHeight: "100vh" }}>
+        <CNavbar />
+        <main className="flex-fill">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <HomepageBody />
+                </>
+              }
+            />
+            <Route path="/search" element={<Search />} />
+            <Route path="/tv-shows" element={<TvShows />} />
+            <Route path="/movies" element={<Movies />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/movie-details/:movieId" element={<MovieDetails />} />
+            <Route
+              path="*"
+              element={
+                <>
+                  <HomepageBody />
+                </>
+              }
+            />
+          </Routes>
+        </main>
+        <CFooter />
+      </div>
     </BrowserRouter>
   );
 }

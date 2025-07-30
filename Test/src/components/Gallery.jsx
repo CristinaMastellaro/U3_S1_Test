@@ -23,6 +23,7 @@ const Gallery = (props) => {
       .then((data) => {
         setMovies(data.Search);
         setIsLoading(false);
+        console.log("movies", data.Search);
       })
       .catch((err) => {
         setIsLoading(false);
@@ -48,25 +49,31 @@ const Gallery = (props) => {
             {"We couldn't load the movies: " + error}
           </Alert>
         )}
-        {movies.map((movie) => {
-          if (
-            movie.Type !== "game" &&
-            (movie.Type === props.type || movie.type === undefined)
-          ) {
-            return (
-              <div className="p-2" key={movie.imdbID}>
-                <img
-                  src={movie.Poster}
-                  alt={movie.Title + " - " + movie.Year}
-                  className="text-light immIngrandire"
-                  onClick={() => {
-                    navigate(`/movie-details/${movie.imdbID}`);
-                  }}
-                />
-              </div>
-            );
-          }
-        })}
+        {movies === undefined && props.title !== "" && (
+          <Alert variant="danger" className="text-center my-2">
+            {"We didn't find any movies"}
+          </Alert>
+        )}
+        {movies !== undefined &&
+          movies.map((movie) => {
+            if (
+              movie.Type !== "game" &&
+              (movie.Type === props.type || movie.type === undefined)
+            ) {
+              return (
+                <div className="p-2" key={movie.imdbID}>
+                  <img
+                    src={movie.Poster}
+                    alt={movie.Title + " - " + movie.Year}
+                    className="text-light immIngrandire"
+                    onClick={() => {
+                      navigate(`/movie-details/${movie.imdbID}`);
+                    }}
+                  />
+                </div>
+              );
+            }
+          })}
       </div>
     </article>
   );
