@@ -9,6 +9,7 @@ import Settings from "./components/Settings";
 import Profile from "./components/Profile";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TvShows from "./components/TvShows";
+import Search from "./components/Search";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             </>
           }
         />
+        <Route path="/search" element={<Search />} />
         <Route path="/tv-shows" element={<TvShows />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/settings" element={<Settings />} />

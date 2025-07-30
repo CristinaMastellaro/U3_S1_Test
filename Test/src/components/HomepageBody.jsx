@@ -2,9 +2,10 @@ import Gallery from "./Gallery";
 import { useLocation } from "react-router-dom";
 import TitleHomepage from "./TitleHomepage";
 
-const HomepageBody = () => {
+const HomepageBody = (props) => {
   const location = useLocation();
 
+  const endpoint = "http://www.omdbapi.com/?apikey=c4b8b6a5&s=";
   const endpointsMovies = [
     "http://www.omdbapi.com/?apikey=c4b8b6a5&s=Harry%20Potter",
     "http://www.omdbapi.com/?apikey=c4b8b6a5&s=My%20Little%20Pony",
@@ -60,6 +61,9 @@ const HomepageBody = () => {
             type="series"
           />
         </section>
+      )}
+      {location.pathname === "/search" && (
+        <Gallery title={props.title} endpoint={endpoint + props.searchQuery} />
       )}
     </>
   );

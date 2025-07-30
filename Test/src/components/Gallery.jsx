@@ -34,7 +34,7 @@ const Gallery = (props) => {
 
   useEffect(() => {
     getPictures();
-  }, []);
+  }, [props.title]);
 
   return (
     <article className="m-4">
@@ -49,7 +49,10 @@ const Gallery = (props) => {
           </Alert>
         )}
         {movies.map((movie) => {
-          if (movie.Type !== "game" && movie.Type === props.type) {
+          if (
+            movie.Type !== "game" &&
+            (movie.Type === props.type || movie.type === undefined)
+          ) {
             return (
               <div className="p-2" key={movie.imdbID}>
                 <img
