@@ -1,20 +1,20 @@
-import { NavDropdown } from "react-bootstrap"
+import { NavDropdown } from "react-bootstrap";
 
 const TitleHomepage = () => {
-    return (
-       <div className="my-3 p-3">
-        <div className="d-flex justify-content-between align-items-center">
+  return (
+    <div className="my-3 p-3">
+      <div className="d-flex justify-content-between align-items-center">
         <div className="d-flex align-items-center">
-          <h1 className="text-light me-4">TV Shows</h1>
+          <h1 className="text-light me-4">Your favorite movies and TV Shows</h1>
           <NavDropdown
-              title="Genres"
-              id="basic-nav-dropdown"
-              className="text-white me-3 border rounded-2 px-3 py-2"
-            >
-              <NavDropdown.Item href="#">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#">Comedy</NavDropdown.Item>
-              <NavDropdown.Item href="#">Musical</NavDropdown.Item>
-            </NavDropdown>
+            title="Genres"
+            id="basic-nav-dropdown"
+            className="text-white me-3 border rounded-2 px-3 py-2"
+          >
+            <NavDropdown.Item href="#">Action</NavDropdown.Item>
+            <NavDropdown.Item href="#">Comedy</NavDropdown.Item>
+            <NavDropdown.Item href="#">Musical</NavDropdown.Item>
+          </NavDropdown>
         </div>
 
         <div className="me-4">
@@ -39,15 +39,16 @@ const TitleHomepage = () => {
             className="bi bi-grid border border-1 border-secondary p-1"
             viewBox="0 0 16 16"
           >
-            <path
-              d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z"
-            />
+            <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z" />
           </svg>
         </div>
       </div>
-      <p className="text-light mt-4">Watch your favorite movies everywhere you want! Click on the posters to see the title and info on your favorite TV Shows!</p>
-      </div>
-    )
-}
+      <p className="text-light mt-4">
+        Watch your favorite movies everywhere you want! Click on the posters to
+        see the title and info on your favorite TV Shows!
+      </p>
+    </div>
+  );
+};
 
-export default TitleHomepage
+export default TitleHomepage;
